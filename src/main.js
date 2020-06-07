@@ -18,9 +18,9 @@ async function main() {
 
     // Show header
     console.log('')
-    console.log(' +-----------------------------------+')
-    console.log(' |        Stuck Inside server        |')
-    console.log(' +-----------------------------------+')
+    console.log(' +-----------------------------------------+')
+    console.log(' |        Telegram Story Bot Server        |')
+    console.log(' +-----------------------------------------+')
     console.log('')
 
     // Set default config options

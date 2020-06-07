@@ -3,6 +3,7 @@
 
 const fs = require('fs')
 const Telegram = require('./Telegram')
+const path = require('path')
 
 module.exports = class Game {
 
@@ -36,7 +37,7 @@ module.exports = class Game {
         }
 
         // Add IDs to story events
-        console.log('> Preparing story events...')
+        console.log('> Loading game: ' + this.config.game.name)
         for (let i = 0 ; i < this.config.game.story.length ; i++)
         this.config.game.story[i].id = this.config.game.story[i].id || i
 
@@ -45,7 +46,7 @@ module.exports = class Game {
         this.config.game.story[i].next = this.config.game.story[i].next || (this.config.game.story[i+1] && this.config.game.story[i+1].id) || "end"
 
         // Load states
-        this.dbFilename = `state-${this.config.game.id}.db`
+        this.dbFilename = path.resolve(__dirname, '../state', `${this.config.game.id}.db`)
         console.log('> Loading current states from ' + this.dbFilename)
         try {
             Object.assign(this.gameState, JSON.parse(fs.readFileSync(this.dbFilename, { encoding: 'utf8' })))
@@ -81,7 +82,15 @@ module.exports = class Game {
             // If enough time has passed, save states
             if (this.gameStatesLastSave + 30000 < Date.now()) {
                 this.gameStatesLastSave = Date.now()
+
+                // Make folder if it doesn't exist
+                try {
+                    fs.mkdirSync(path.dirname(this.dbFilename))
+                } catch (e) {}
+
+                // Save file
                 fs.writeFileSync(this.dbFilename, JSON.stringify(this.gameState, null, 4))
+
             }
 
         }
