@@ -47,7 +47,7 @@ module.exports = class Telegram {
         // Fetch messages
         let response = await fetch(`https://api.telegram.org/bot${this.token}/getUpdates?offset=${offset}`).then(req => req.json())
         if (!response.ok)
-            throw new Error('Telegram request failed.')
+            throw new Error('Telegram request failed. ' + response.description)
 
         // Done
         return response.result
@@ -61,7 +61,7 @@ module.exports = class Telegram {
         console.log(`> ${chatID} - Sending typing indicator`)
         let response = await fetch(`https://api.telegram.org/bot${this.token}/sendChatAction?chat_id=${chatID}&action=typing`).then(req => req.json())
         if (!response.ok)
-            throw new Error('Telegram request failed.')
+            throw new Error('Telegram request failed. ' + response.description)
 
     }
 
