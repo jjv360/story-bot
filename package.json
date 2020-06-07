@@ -1,0 +1,22 @@
+{
+  "name": "stuckinside-bot",
+  "version": "1.0.0",
+  "description": "Server for the Stuck Inside telegram game.",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/main.js"
+  },
+  "keywords": [
+    "stuck",
+    "inside",
+    "game",
+    "telegram",
+    "bot"
+  ],
+  "author": "jjv360",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
