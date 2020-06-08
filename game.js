@@ -523,6 +523,7 @@ module.exports = {
         { text: "It's odd for an entire town to be inside one of these 'rooms', don't you think? Maybe I'll go check it out later... It turns out she goes to town to sell herbs and homemade medicine (she's totally a witch), and she buys food from there every so often. She said she's going again tomorrow and I can come with her.", replies: ["So she's letting you stay for the night?"]},
         { text: "Yeah, and she's even giving me food. She said I can stay as long as I like... Which is great, since I can open the door to anywhere, if I want to come back here to relax for a while, I'll always be able to. That's a really comforting thought..."},
         { text: "Anyway, I'm going to look around the area for a bit. Bye!", replies: ["Bye, good luck!"]},
+        { wait: 15 * 60 * 1000 },
         { text: "`Connection to candidate 23 has been lost.`", typing: false },
         { goto: "END" },
 
