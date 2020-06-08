@@ -427,7 +427,7 @@ module.exports = {
         ]},
         { text: "Hmm... Well, it's worth a shot. I'll go look for something to draw with in the old guy's room."},
         { wait: 5 * 60 * 1000 },
-        { text: "Well what can I say, it worked. Well, I draw a door, and was able to grab the knob and open it. However it's just a pitch black hole now. When the old man saw it, he just gave me an odd look and said 'do you even want to leave?' and walked off. Of course I want to leave!" },
+        { text: "Well what can I say, it worked. Well, I drew a door, and was able to grab the knob and open it. However it's just a pitch black hole now. When the old man saw it, he just gave me an odd look and said 'do you even want to leave?' and walked off. Of course I want to leave!" },
         { text: "But this... I'm kind of worried about stepping into this black puddle behind the door here. What do you think?", replies: [
             "Just go for it. No pain, no gain.",
             "Better try find another way, it sounds dangerous."
@@ -437,7 +437,7 @@ module.exports = {
             { if: "Better try find another way, it sounds dangerous." },
             { text: "Yeah. Though, there's literally nothing else here, and the old man is no help. The only thing I haven't tried is jumping off the edge..." },
             { wait: 30 * 60 * 1000 },
-            { text: "With no other choise, I spoke to the old man again, and he says it's impossible to die here. So, that means jumping of the edge is a possibility? Maybe it's less of a puzzle, and more that I just need to find the courage to take a leap of faith.", replies: [
+            { text: "With no other choice, I spoke to the old man again, and he says it's impossible to die here. So, that means jumping of the edge is a possibility? Maybe it's less of a puzzle, and more that I just need to find the courage to take a leap of faith.", replies: [
                 "If there's no risk, why not try jumping then?",
                 "If you're going to risk it anyway, why not try the black door?"
             ]},
@@ -525,6 +525,8 @@ module.exports = {
         { text: "Anyway, I'm going to look around the area for a bit. Bye!", replies: ["Bye, good luck!"]},
         { text: "`Connection to candidate 23 has been lost.`", typing: false },
         { goto: "END" },
+
+        { id: "END" },
 
     ]
 
